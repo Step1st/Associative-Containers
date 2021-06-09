@@ -28,7 +28,7 @@ void printURLs(MapUrl& urls);
 
 void tolower(string& str);
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[]){
 
     if (argc == 2) {
         string input;
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         core(input);
         return 0;
     }
-    else if(argc == 1){
+    else if (argc == 1) {
         string input;
         cout << "Enter file location: ";
         std::getline(std::cin, input);
@@ -46,15 +46,13 @@ int main(int argc, char* argv[]) {
         system("pause");
         return 0;
     }
-    else{
+    else {
         cout << "Error! too many arguments given!" << endl;
         return 1;
     }
-
 }
 
-void core(string& path)
-{
+void core(string& path){
     MapText textMap;
     MapUrl urls;
     vector<string> keys;
@@ -94,13 +92,12 @@ void getText(MapText& textMap, MapUrl& urls, string& path) {
         if (!text.eof()) {
             std::getline(text, templine);
             line << templine;
-            while (!line.eof())
-            {
+            while (!line.eof()) {
                 line >> word;
                 if(regex_match(word, url)) {
                     urls.insert(make_pair(word,k));
                 }
-                else{
+                else {
                     word.erase(std::remove_if (word.begin(), word.end(), ispunct), word.end());
                     tolower(word);
                     textMap.insert(make_pair(word,k));
@@ -109,7 +106,6 @@ void getText(MapText& textMap, MapUrl& urls, string& path) {
             k++;
             line.clear();
         }
-
         else break;
     }
     text.clear();
