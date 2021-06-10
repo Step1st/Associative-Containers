@@ -23,7 +23,7 @@ Reading text...
 
 ```
 
-Jeigu programa bus naudojimą per komandinę eilutę kelia galima iškart nurodyti kaip parametrą. Tokiu atveju naudotojo paleidus programoje jau neprašys nurodyti kelią.
+Jeigu programa bus naudojimą per komandinę eilutę, kelia galima iškart nurodyti kaip parametrą. Tokiu atveju naudotojo paleidus programoje jau neprašys nurodyti kelią.
 
 ```
 C:\Users\stolo\Desktop\Associative Container>main ../Texts/ExampleText.txt
